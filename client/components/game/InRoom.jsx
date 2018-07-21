@@ -4,6 +4,7 @@ import {connect} from 'react-redux'
 import VoteButtons from './VoteButtons'
 import VoteDisplay from './VoteDisplay'
 import ChangeName from './ChangeName'
+import ChatWindow from './ChatWindow'
 
 function InRoom ({room}) {
   return <div>
@@ -11,6 +12,7 @@ function InRoom ({room}) {
     <VoteDisplay />
     <ChangeName />
     <VoteButtons />
+    <ChatWindow /> 
   </div>
 }
 

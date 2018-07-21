@@ -34,6 +34,11 @@ module.exports = app => {
         io.to(room.id).emit('reset') //reset vote settings for a room
       })
 
+      socket.on('chat-down', (roomID, msg) => {
+        console.log(msg)
+        io.to(roomID).emit('chat-up', msg)
+    })
+
   });
 
   return io
