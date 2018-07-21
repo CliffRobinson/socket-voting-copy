@@ -2,7 +2,7 @@
 module.exports = app => {
   const http = require('http').Server(app);
   var io = require('socket.io')(http);
-
+  //io is like the socket controller
   io.on('connection', (socket) => {
       console.log(`A user connected at ${new Date()}`)
       // io.emit('connectedUsers', socket.Server.parser.CONNECT)

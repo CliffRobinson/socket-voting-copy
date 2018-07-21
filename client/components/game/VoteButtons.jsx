@@ -8,13 +8,15 @@ class VoteButtons extends React.Component {
     const {
       votes,
       room,
-      dispatch,
+      dispatch, // the other things come from props, dispatch comes by virtue of being connected. 
       socket
     } = this.props
-    if (votes.hasVoted) return
+    if (votes.hasVoted) return //return nothing to prevent dispatch
 
     dispatch(castVote())
-    socket.emit('vote', room, isYes)
+    socket.emit('vote', room, isYes)  //the socket in redux is the socket we emit to in order to change the db
+
+    //receiving socket is in server/socket.js 
   }
   reset() {
     const {room, socket} = this.props
